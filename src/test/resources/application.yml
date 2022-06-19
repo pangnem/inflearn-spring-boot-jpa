@@ -1,0 +1,23 @@
+spring:
+#  datasource:
+#    url: jdbc:h2:mem:jpashop;MODE=MySQL
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
+#  jpa:
+#    hibernate:
+#      ddl-auto: create-drop
+#    properties:
+#      hibernate:
+##        show_sql: true
+#        format_sql: true
+#    database-platform: org.hibernate.dialect.MariaDBDialect
+#
+# 스프링 부트에서는 기본적으로 메모리 모드를 사용하므로 생략 가능하다!
+
+# 운영환경에서 로그는 System.out이 아닌 로그를 통해서 찍어야함.
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
+
