@@ -23,7 +23,7 @@ public class Delivery {
 	private Long id;
 
 	@OneToOne(mappedBy = "delivery")
-	private Order oder;
+	private Order order;
 
 	@Embedded
 	private Address address;
