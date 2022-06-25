@@ -8,9 +8,12 @@ import jpabook.jpashop.domain.item.Item;
 import jpabook.jpashop.repository.ItemRepository;
 import jpabook.jpashop.repository.MemberRepository;
 import jpabook.jpashop.repository.OrderRepository;
+import jpabook.jpashop.repository.OrderSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
@@ -48,6 +51,9 @@ public class OrderService {
 		order.cancel(); // 엔티티 안 내용만 바껴도 dirty checking이 되어 데이터베이스에 업데이트 쿼리가 날라간다!
 	}
 
-//	public List<Order> SearchOrders(OrderSearchDto orderSearchDto) {}
+	public List<Order> findOrders(OrderSearch orderSearch) {
+		return orderRepository.findAllByCriteria(orderSearch);
+	}
+
 
 }
